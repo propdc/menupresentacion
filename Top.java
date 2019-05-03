@@ -18,10 +18,11 @@ public class Top extends JPanel {
 		
 		textField = new JTextField();
 		textField.setPreferredSize(new Dimension(100,50));
+		textField.setEditable(false);
 		jbExaminar = new JButton("Examinar");
 		jbExaminar.setPreferredSize(new Dimension(150,25));
 		
-		jbExaminar.addActionListener(new GestorExaminar(this));
+		jbExaminar.addActionListener(new GestorExaminar(jbExaminar));
 	
 		
 		setLayout(new FlowLayout());
@@ -30,4 +31,21 @@ public class Top extends JPanel {
 		this.add(jbExaminar);
 			
 	}
+	
+	
+	
+	public JTextField getTextField() {
+		return textField;
+	}
+
+
+
+	public void setTextField (String textField) {
+		this.textField.setText(textField);
+	}
+	
+	public JButton getjbExaminar() {
+		return jbExaminar;
+	}
+
 }
